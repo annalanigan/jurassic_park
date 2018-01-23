@@ -26,4 +26,12 @@ Park.prototype.getFertile = function(num){
   return fertileArray;
 }
 
+Park.prototype.calculateDinosaurs = function(years){
+  totalDinos = 0;
+  for (dinosaurs of this.enclosure){
+    totalDinos += dinosaurs.reproduce(years);
+  }
+  return totalDinos;
+}
+
 module.exports = Park;

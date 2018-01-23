@@ -8,6 +8,8 @@ describe('park', function(){
   var dinosaur1;
   var dinosaur2;
   var dinosaur3;
+  var tyrannosaurus;
+  var dilophosaurus;
 
   beforeEach(function(){
   park = new Park();
@@ -15,6 +17,8 @@ describe('park', function(){
   dinosaur2 = new Dinosaur("Triceratops", 4);
   dinosaur3 = new Dinosaur("Brachiosaurus", 1);
   dinosaur4 = new Dinosaur("T-Rex", 3);
+  tyrannosaurus = new Dinosaur("T-Rex", 3);
+  dilophosaurus = new Dinosaur("Dilophosaurus", 2);
   })
 
   it('should start with empty enclosure', function(){
@@ -69,5 +73,27 @@ describe('park', function(){
     park.addDinosaur(dinosaur4);
     assert.strictEqual(park.getFertile(2).length, 6);
   })
+
+  it('should be able to calculate number of dinosaurs after 1 year starting with 1 dinosaur', function(){
+    park.addDinosaur(tyrannosaurus);
+    assert.strictEqual(park.calculateDinosaurs(1), 4);
+  });
+
+  it('should be able to calculate number of dinosaurs after 2 years starting with 1 dinosaur', function(){
+    park.addDinosaur(tyrannosaurus);
+    assert.strictEqual(park.calculateDinosaurs(2), 16);
+  });
+  
+  it('should be able to calculate number of dinosaur after year two starting with 2 dinosaurs', function(){
+    park.addDinosaur(tyrannosaurus);
+    park.addDinosaur(dilophosaurus);
+    assert.strictEqual(park.calculateDinosaurs(2), 25);
+  });
+
+  it('should be able to calculate number of dinosaur after year one starting with 2 dinosaurs', function(){
+    park.addDinosaur(tyrannosaurus);
+    park.addDinosaur(dilophosaurus);
+    assert.strictEqual(park.calculateDinosaurs(1), 7);
+  });
 
 })
