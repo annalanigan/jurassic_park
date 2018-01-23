@@ -13,8 +13,8 @@ describe('dinosaur', function(){
     dinosaur3 = new Dinosaur("Argentinosaurus", 1);
   })
 
-  it('should have a name', function(){
-    assert.strictEqual(dinosaur1.name, "T-Rex");
+  it('should have a type', function(){
+    assert.strictEqual(dinosaur1.type, "T-Rex");
   })
 
   it('should have a number of offspring', function(){

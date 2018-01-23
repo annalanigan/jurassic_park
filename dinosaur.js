@@ -1,5 +1,5 @@
-const Dinosaur = function(name, eggs){
-  this.name = name;
+const Dinosaur = function(type, eggs){
+  this.type = type;
   this.offspring = eggs;
 }
 
