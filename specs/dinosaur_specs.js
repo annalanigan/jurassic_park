@@ -17,4 +17,8 @@ describe('dinosaur', function(){
     assert.strictEqual(dinosaur1.name, "T-Rex");
   })
 
+  it('should have a number of offspring', function(){
+    assert.strictEqual(dinosaur2.offspring, 4);
+  })
+
 })
