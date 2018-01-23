@@ -58,4 +58,16 @@ describe('park', function(){
     assert.strictEqual(park.enclosure.length, 8);
   })
 
+  it('should return all dinos with offspring count of more than 2', function(){
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    park.addDinosaur(dinosaur4);
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    park.addDinosaur(dinosaur4);
+    assert.strictEqual(park.getFertile(2).length, 6);
+  })
+
 })
