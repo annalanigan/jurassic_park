@@ -20,15 +20,21 @@ Park.prototype.removeType = function(type){
   this.enclosure = this.enclosure.filter(dinosaur => dinosaur.type !== type);
 }
 
+// Park.prototype.getFertile = function(num){
+//   let fertileArray = [];
+//   for (dinosaur of this.enclosure){
+//     if (dinosaur.offspring > num){
+//       fertileArray.push(dinosaur);
+//     }
+//   }
+//   return fertileArray;
+// }
+
 Park.prototype.getFertile = function(num){
-  let fertileArray = [];
-  for (dinosaur of this.enclosure){
-    if (dinosaur.offspring > num){
-      fertileArray.push(dinosaur);
-    }
-  }
-  return fertileArray;
+  fertileDinos = this.enclosure.filter(dinosaur => dinosaur.offspring > num);
+  return fertileDinos;
 }
+
 
 Park.prototype.calculateDinosaurs = function(years){
   totalDinos = 0;

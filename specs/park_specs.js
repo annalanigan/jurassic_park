@@ -71,7 +71,6 @@ describe('park', function(){
     park.addDinosaur(dinosaur2);
     park.addDinosaur(dinosaur3);
     park.addDinosaur(dinosaur4);
-
     assert.strictEqual(park.getFertile(2).length, 6);
   })
 
