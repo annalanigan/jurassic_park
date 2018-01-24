@@ -6,24 +6,22 @@ Park.prototype.addDinosaur =function (newDinosaur){
   this.enclosure.push(newDinosaur);
 }
 
+// Park.prototype.removeType = function(type){
+//   let newArray = [];
+//   for(dinosaur of this.enclosure){
+//     if (dinosaur.type != type){
+//       newArray.push(dinosaur)
+//     }
+//   }
+//   this.enclosure = newArray;
+// }
+
 Park.prototype.removeType = function(type){
-  let newArray = [];
-  for(dinosaur of this.enclosure){
-    if (dinosaur.type != type){
-      newArray.push(dinosaur)
-    }
-  }
-  this.enclosure = newArray;
+  this.enclosure = this.enclosure.filter(dinosaur => dinosaur.type !== type);
 }
 
 Park.prototype.getFertile = function(num){
-  let fertileArray = [];
-  for (dinosaur of this.enclosure){
-    if (dinosaur.offspring > num){
-      fertileArray.push(dinosaur);
-    }
-  }
-  return fertileArray;
+  this.enclosure = this.enclosure.filter(dinosaur => dinosaur.offspring > num);
 }
 
 Park.prototype.calculateDinosaurs = function(years){
