@@ -21,7 +21,13 @@ Park.prototype.removeType = function(type){
 }
 
 Park.prototype.getFertile = function(num){
-  this.enclosure = this.enclosure.filter(dinosaur => dinosaur.offspring > num);
+  let fertileArray = [];
+  for (dinosaur of this.enclosure){
+    if (dinosaur.offspring > num){
+      fertileArray.push(dinosaur);
+    }
+  }
+  return fertileArray;
 }
 
 Park.prototype.calculateDinosaurs = function(years){
